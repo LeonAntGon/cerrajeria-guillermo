@@ -118,7 +118,9 @@ export default function Header() {
               rel={item.icon ? "noopener noreferrer" : undefined}
             >
               {item.icon && <item.icon className="w-5 h-5" />}
-              <span className={item.icon ? "sr-only md:not-sr-only text-black" : ""}>{item.label}</span>
+              <span className={item.icon ? "flex items-center space-x-2 text-black" : ""}>
+              {item.label}
+              </span>
             </Link>
           ))}
               <a href="tel:+5493815818139"><div className="rounded-md px-5 py-3 bg-green-300 cursor-pointer flex">
