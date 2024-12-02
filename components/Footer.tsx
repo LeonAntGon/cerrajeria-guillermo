@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Instagram, Facebook } from 'lucide-react'
+import Link from 'next/link'
 
 const Footer: React.FC = () => {
   const phoneNumber = '+54 9 381 581-8139';
@@ -33,6 +35,26 @@ const Footer: React.FC = () => {
           )}
         </p>
         <p>&copy; 2024 Cerrajería Guillermo. Todos los derechos reservados.</p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <Link 
+            href="https://www.instagram.com/cerrajeriaguillermo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-secondary transition-colors"
+          >
+            <Instagram className="w-6 h-6" />
+            <span className="sr-only">Instagram</span>
+          </Link>
+          <Link 
+            href="https://www.facebook.com/cerrajeriaguillermo" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-secondary transition-colors"
+          >
+            <Facebook className="w-6 h-6" />
+            <span className="sr-only">Facebook</span>
+          </Link>
+        </div>
         
       </div>
     </footer>

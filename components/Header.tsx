@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-
+import { Menu, Instagram, Facebook } from 'lucide-react'
 
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
@@ -42,7 +41,9 @@ export default function Header() {
     { href: "#servicios", label: "Servicios" },
     { href: "#sobre-nosotros", label: "Info" },
     { href: "#contacto", label: "Nuestro Local" },
-    { href: "#testimonios", label: "Testimonios"}
+    { href: "#testimonios", label: "Testimonios"},
+    { href: "https://www.instagram.com/gui_llermocerrajeriaok/", label: "Instagram", icon: Instagram },
+    { href: "https://www.facebook.com/people/Guillermo-Cerrajer%C3%ADa/100071606172948/?_rdr", label: "Facebook", icon: Facebook },
   ]
 
   return (
@@ -107,16 +108,18 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[240px] sm:w-[300px]">
             <nav className="flex flex-col space-y-4 mt-[54px]">
-              {menuItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-lg hover:underline"
-                  onClick={closeMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            {menuItems.map((item) => (
+            <Link 
+              key={item.href} 
+              href={item.href} 
+              className="hover:underline flex items-center space-x-1"
+              target={item.icon ? "_blank" : undefined}
+              rel={item.icon ? "noopener noreferrer" : undefined}
+            >
+              {item.icon && <item.icon className="w-5 h-5" />}
+              <span className={item.icon ? "sr-only md:not-sr-only text-black" : ""}>{item.label}</span>
+            </Link>
+          ))}
               <a href="tel:+5493815818139"><div className="rounded-md px-5 py-3 bg-green-300 cursor-pointer flex">
               <svg
       viewBox="0 0 24 24"
