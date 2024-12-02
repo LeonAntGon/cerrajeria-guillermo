@@ -35,6 +35,7 @@ export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const closeMenu = () => setIsOpen(false)
 
   const menuItems = [
